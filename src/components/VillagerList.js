@@ -2,7 +2,7 @@ import React from 'react';
 import Villager from './Villager';
 import VillagerSpecies from './VillagerSpecies';
 
-const VillagerList = ({villagers, speciesSelection}) => {
+const VillagerList = ({villagers, speciesSelection, speciesList, onVillagerClicked}) => {
 
 
         const ListOfVillagers = villagers.map((villager, index) => {
@@ -12,6 +12,12 @@ const VillagerList = ({villagers, speciesSelection}) => {
         const ListOfSpecies = villagers.map((villagers, index) => {
                 return <VillagerSpecies villager={villagers} index={index} key={index} speciesSelection={speciesSelection}/>})
 
+        const villagerSelected = function(event){
+                const chosenVillager = villagers[event.target.value];
+                onVillagerClicked(chosenVillager);
+        }
+        
+
   return (
         <div className='dropdown'>
         <select defaultValue = '' onChange={speciesSelection}>
@@ -20,7 +26,7 @@ const VillagerList = ({villagers, speciesSelection}) => {
                 </option>
                 {ListOfSpecies}
         </select>
-        <select defaultValue = ''>
+        <select defaultValue = '' onChange={villagerSelected}>
                 <option value=''>
                         Select A Villager
                 </option>
