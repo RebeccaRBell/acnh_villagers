@@ -7,7 +7,7 @@ const VillagerContainer = () => {
 
       const [villagers, setVillagers] = useState([]);
       const [selectedVillager, setSelectedVillager] = useState(null);
-      const [species, setSpecies] = useState([]);
+      const [selectedSpecies, setSelectedSpecies] = useState(null);
       
       const speciesList = ["Anteater", "Bear", "Bird", "Bull", "Cat", "Cub", "Chicken", "Cow", "Alligator", "Deer", "Dog", "Duck", "Elephant", "Frog", "Goat", "Gorilla", "Hamster", "Hippo", "Horse", "Koala", "Kangaroo", "Monkey", "Lion", "Mouse", "Octopus", "Ostrich", "Eagle", "Penguin", "Pig", "Rabbit", "Rhino", "Sheep", "Squirrel", "Tiger", "Wolf"];
 
@@ -15,8 +15,9 @@ const VillagerContainer = () => {
         getVillagers();
       },)
 
-            const speciesSelection = (species) => {
-            setSpecies(species);
+            const onSpeciesClicked = function(species){
+                  setSelectedSpecies(species);
+                  console.log(species);
         }
 
            const onVillagerClicked = function(villager){
@@ -35,7 +36,7 @@ const VillagerContainer = () => {
         <div className='logo-background'>
             <img src={logo} className='acnh-logo' alt='Animal Crossing: New Horizons Logo'/>
             <h1>Villager Information Centre</h1>
-            <VillagerList villagers={villagers} speciesList={speciesList} speciesSelection={speciesSelection} onVillagerClicked={onVillagerClicked}/>
+            <VillagerList villagers={villagers} speciesList={speciesList} onSpeciesClicked={onSpeciesClicked} onVillagerClicked={onVillagerClicked} selectedSpecies={selectedSpecies}/>
             {selectedVillager ? <VillagerDetail villager={selectedVillager} /> : null}
         </div>
   )

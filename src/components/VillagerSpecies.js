@@ -1,10 +1,10 @@
 import React from 'react';
 
-const VillagerSpecies = ({villager, index, speciesSelection}) => {
+const VillagerSpecies = ({species}) => {
 
 
         return (
-                <option value={index} onClick={speciesSelection}>{villager.species}</option>
+                <option value={species}>{species}</option>
         )
 };
  export default VillagerSpecies;
