@@ -1,6 +1,6 @@
 .App {
   text-align: center;
-  height: 100vh;
+  height: 120vh;
 }
 .logo-background{
   background-color: rgb(255, 241, 220);
@@ -79,7 +79,7 @@ margin: 0 auto;
 }
 .villager-detail h1 {
   font-size: 40px;
-  padding: 0px 5px 15px 5px;
+  padding: 0px 5px 20px 5px;
 }
 .villager-detail table{
   text-align: left;
@@ -98,4 +98,33 @@ margin: 0 auto;
 .villager-detail td {
   background-color: rgb(110, 160, 165);
   border-radius: 10px;
+}
+.details {
+  background-color: rgb(255, 241, 220);
+  height: 60vh;
+  border-radius: 50px;
+}
+.details button {
+  margin-top: 20px;
+  padding: 10px;
+}
+.heart {
+  color: black;
+  opacity: 0.3;
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
+}
+
+.heart:hover {
+  animation: heartbeat 1s infinite;
+  fill: red;
+  color: red;
+  opacity: 1;
+  transition: opacity 500ms;
+}
+
+button {
+  background: none;
+  border: none;
 }

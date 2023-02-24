@@ -1,7 +1,16 @@
 import React from 'react';
+import {FiHeart} from "react-icons/fi";
 
-const VillagerDetail = ({villager}) => {
+const VillagerDetail = ({villager, addToFavourites, index}) => {
+        
+        const villagerFavourited = () =>{
+        addToFavourites(index);
+        console.log(index.id);
+         }
+
+
         return(
+                <div className='details'>
                 <div className='detail-container'>
                 <div className='villager-image'>
                 <img src={villager.image_uri}/>
@@ -16,6 +25,10 @@ const VillagerDetail = ({villager}) => {
                       <tr><td>Catchphrase</td><td>{villager['catch-phrase']}</td></tr>
                         <tr><td>Saying</td><td>{villager.saying}</td></tr>
                         </table>
+                </div>
+                </div>
+                <div>
+                <button onClick={villagerFavourited}><FiHeart className="heart"/></button>
                 </div>
                 </div>
         )
