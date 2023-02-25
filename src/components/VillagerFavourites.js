@@ -1,9 +1,9 @@
 import React from 'react';
 
-const VillagerFavourites = ({villager, index}) => {
+const VillagerFavourites = ({villager}) => {
 
         return(
-        <option value={index}>{villager.name['name-EUen']}</option>
+        <option value={(villager.id - 1)}>{villager.name['name-EUen']}</option>
         ) 
 }
 
