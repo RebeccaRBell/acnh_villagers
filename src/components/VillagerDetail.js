@@ -18,12 +18,14 @@ const VillagerDetail = ({villager, addToFavourites, index}) => {
                 <div className='villager-detail'>
                         <h1>{villager.name['name-EUen']}</h1>
                         <table>
+                        <tbody>
                         <tr>
                       <td>Species</td><td>{villager.species}</td></tr>
                       <tr><td>Personality</td><td>{villager.personality}</td></tr>
                       <tr><td>Hobby</td><td>{villager.hobby}</td></tr>
                       <tr><td>Catchphrase</td><td>{villager['catch-phrase']}</td></tr>
                         <tr><td>Saying</td><td>{villager.saying}</td></tr>
+                        </tbody>
                         </table>
                 </div>
                 </div>

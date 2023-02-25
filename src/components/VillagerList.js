@@ -8,19 +8,17 @@ const VillagerList = ({villagers, speciesList, onVillagerClicked, selectedSpecie
 
         const ListOfVillagers = villagers.map((villager, index) => {
                 if (villager.species === selectedSpecies){
-                return <Villager villager={villager} index={index} key={index} favourite={favourite} addToFavourites={addToFavourites}/>
+                return <Villager villager={villager} index={index} key={index} />
 }})
 
         const ListOfSpecies = speciesList.map((species, index) => {
                 return <VillagerSpecies species={species} key={index}/>;
         })
 
-        const ListOfFavourites = villagers.map((villager, index) => {
-                
-                if (villager.id === favourite){
+        const ListOfFavourites = favourite.map((villager, index) => {
                 return <VillagerFavourites villager={villager} index={index} key={index}/>
           
-        }})
+        })
 
         const villagerSelected = function(event){
                 const chosenVillager = villagers[event.target.value];
@@ -47,7 +45,7 @@ const VillagerList = ({villagers, speciesList, onVillagerClicked, selectedSpecie
                 </option>
                 {ListOfVillagers}
         </select> : null }
-        { favourite ? <select defaultValue = ''>
+        { favourite ? <select defaultValue = '' onChange={villagerSelected}>
                 <option value=''>
                         Favourite Villagers
                 </option>

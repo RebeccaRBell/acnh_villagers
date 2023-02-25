@@ -8,7 +8,7 @@ const VillagerContainer = () => {
       const [villagers, setVillagers] = useState([]);
       const [selectedVillager, setSelectedVillager] = useState(null);
       const [selectedSpecies, setSelectedSpecies] = useState(null);
-      const [favourite, setFavourite] = useState(null);
+      const [favourite, setFavourite] = useState([]);
       
       const speciesList = ["Anteater", "Bear", "Bird", "Bull", "Cat", "Cub", "Chicken", "Cow", "Alligator", "Deer", "Dog", "Duck", "Elephant", "Frog", "Goat", "Gorilla", "Hamster", "Hippo", "Horse", "Koala", "Kangaroo", "Monkey", "Lion", "Mouse", "Octopus", "Ostrich", "Eagle", "Penguin", "Pig", "Rabbit", "Rhino", "Sheep", "Squirrel", "Tiger", "Wolf"];
 
@@ -27,8 +27,9 @@ const VillagerContainer = () => {
         }
 
         const addToFavourites = function(villager){
-            const fullFavourites = [...favourite, villager.id];
+            const fullFavourites = [...favourite, villager];
             setFavourite(fullFavourites);
+            console.log(favourite);
          }
 
       const getVillagers = function(){
