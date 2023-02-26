@@ -11,12 +11,13 @@ const VillagerDetail = ({villager, addToFavourites, index}) => {
 
         return(
                 <div className='details'>
+                <h1>{villager.name['name-EUen']}</h1>
                 <div className='detail-container'>
                 <div className='villager-image'>
                 <img src={villager.image_uri}/>
                 </div>
+                
                 <div className='villager-detail'>
-                        <h1>{villager.name['name-EUen']}</h1>
                         <table>
                         <tbody>
                         <tr>
@@ -27,10 +28,10 @@ const VillagerDetail = ({villager, addToFavourites, index}) => {
                         <tr><td>Saying</td><td>{villager.saying}</td></tr>
                         </tbody>
                         </table>
-                </div>
-                </div>
-                <div>
+                        <div>
                 <button onClick={villagerFavourited}><FiHeart className="heart"/></button>
+                </div>
+                </div>
                 </div>
                 </div>
         )
